@@ -46,14 +46,14 @@ public class TestDataController extends BaseController {
 	public String list(TestData testData, HttpServletRequest request, HttpServletResponse response, Model model) {
 		Page<TestData> page = testDataService.findPage(new Page<TestData>(request, response), testData); 
 		model.addAttribute("page", page);
-		return "jeesite/test/testDataList";
+		return "jeeplat/test/testDataList";
 	}
 
 	@RequiresPermissions("test:testData:view")
 	@RequestMapping(value = "form")
 	public String form(TestData testData, Model model) {
 		model.addAttribute("testData", testData);
-		return "jeesite/test/testDataForm";
+		return "jeeplat/test/testDataForm";
 	}
 
 	@RequiresPermissions("test:testData:edit")
